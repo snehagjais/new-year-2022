@@ -1,1 +1,1 @@
-echo '<?php include_once("newYear.html"); ?>'
+echo <?php include_once("newYear.html"); ?>
