@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>New Year!</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+	<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet"/>
 	
 	<style>
 		*{
 			margin: 0;
 			padding: 0;
-			box-sizing: border-box;
+			box-sizing: content-box;
 			font-family: 'Satisfy', cursive;
 		}
 
@@ -32,55 +32,61 @@
 		}
 
 		.center_div {
-			min-width: 50vw;
-			height: 40vh;
 			color: #32a2a8;
 			text-shadow: 0 0 2rem rgba(77, 219, 227, 0.5);
-			font-size: 7rem;
-			display: flex;
-			justify-content: center;
-			align-items: center;
 			font-weight: bold;
+			padding-top: 25vh;
+			font-size: 72px;
+			box-sizing: border-box;
+		}
+
+		img {
+			width: 20vw;
+    		height: 40vh;
 		}
 
 		p {
-			font-size: 5rem;
 			color: #914030;
 			text-shadow: 0 0 2rem rgba(145, 64, 48, 0.3);
-			display: flex;
-			justify-content: center;
-			align-items: center;
+			font-size: 42px;
 			font-weight: bold;
-		}
-
-		canvas {
-			height: 90vh;
-			width: 100%;
+			padding-top: 30px;
+			padding-left: 30px;
 		}
 	</style>
   </head>
 <body>
 
-	<div class="main_header">
-		<div class="center_div">
-			<h3>HAPPY NEW YEAR !!</h3>
-			<div class="ZHyHcb uTqStd JlrwAf" jscontroller="SRqpxc" data-darkmode="false" data-spotlight-effect="light" jsaction="rcuQ6b:npT2md">
-				<div jscontroller="oDwQ5" jsaction="rcuQ6b:npT2md" data-ved="2ahUKEwicvZyvoY31AhXUc3AKHTv6CTMQnoIHKAN6BAgPEA0">
-					<div jsname="A3zsDe" role="button" tabindex="0" jsaction="h5M12e" style="cursor: pointer;">
-						<img jsname="R5Zsfb" class="TWO2xe" src="https://www.google.com/logos/fnbx/new_years/icon_idle_2021.gif" alt="" data-atf="1" data-frt="0" style="" onclick="startit();">
-					</div>
+	<div class="container">
+		<div class="container">
+			<div class="row text-center font-weight-bold">
+				<h3 class="col center_div">HAPPY NEW YEAR !!</h3>
+			</div>
+
+			<div class="row">
+
+				<div class="col-8 ">
+					<p id="name" class="text-center">TO EVERYONE </p>
+					<p class="text-center">FROM MANISHA &#128512;</p>
 				</div>
 
-				<div jsname="YZTuq" style="display:none" data-ved="2ahUKEwicvZyvoY31AhXUc3AKHTv6CTMQ8LcHKAR6BAgPEA4">
+				<div class="col-2 align-self-center" role="button" tabindex="0" style="cursor: pointer;">
+					<img src="https://www.google.com/logos/fnbx/new_years/icon_idle_2021.gif" onclick="startit(true);">
 				</div>
+
+
 			</div>
 		</div>
-		<p>FROM MANISHA &#128512;</p>
 	</div>
 	<script src="confetti.js"></script>
     <script>
+    	let names = ["Haddi", "Buddhi", "Silu", "Raja", "Sagar", "Arvind", "Siju", "Aditya", "Abhishek", "Vyaas", "Shriyam", "Shreya", "Parthu", "Ladoo", "Betu", "Kittu", "Bab", "YagJag", "RK", "Happy", "Lakshmi", "Mummy", "Papa", "Mama", "Mami", "Uncle", "Aunty", "Bhaiya", "Bhabhi", "AD", "CL", "Shubham"];
 
-      const startit = () => {
+      const startit = (show) => {
+      	if(show) {
+      		var item = names[Math.floor(Math.random()*names.length)];
+      		document.getElementById("name").innerHTML = "TO " + item.toUpperCase();
+      	}
         setTimeout(function () {
           confetti.start();
         }, 1000);
